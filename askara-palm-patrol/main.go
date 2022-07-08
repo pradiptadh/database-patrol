@@ -1,7 +1,7 @@
 package main
 
 import (
-	"askara-database/askara-palm-patrol/models"
+	"github.com/database-patrol/askara-palm-patrol/models"
 )
 
 func main() {
