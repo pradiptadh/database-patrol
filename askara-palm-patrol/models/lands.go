@@ -6,13 +6,13 @@ import (
 
 type PalmLand struct {
 	gorm.Model
-	ID uint16
-	Name string
-	AreaSize float32
-	Latitude float32
-	Longitude float32
-	DistrictID int
-	CompanyID int
+	ID uint16	`json:"id"`
+	Name string	`json:"name"`
+	AreaSize float32 `json:"area_size"`
+	Latitude float32 `json:"latitude"`
+	Longitude float32 `json:"longitude"`
+	DistrictID int `json:"district_id"`
+	CompanyID int	`json:"company_id"`
 	PalmBlock []PalmBlock `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
 
