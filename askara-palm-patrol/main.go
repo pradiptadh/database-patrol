@@ -1,18 +1,20 @@
 package main
 
 import (
+	"log"
 	"os"
 
-	"github.com/Askara-Daulat-Desa/database-patrol/askara-palm-patrol/models"
+	"github.com/joho/godotenv"
+	"github.com/pradiptadh/database-patrol/askara-palm-patrol/models"
 )
 
 // Uncomment if you want to execute it locally
-// func init() {
-// 	err := godotenv.Load(".env")
-// 	if err != nil {
-// 		log.Fatal("Error loading .env file")
-// 	}
-// }
+func init() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+}
 
 func main() {
 	username := os.Getenv("DB_USERNAME")
