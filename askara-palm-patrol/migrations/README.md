@@ -12,7 +12,7 @@ Database Migrations for Askara Palm Patrol.
    
 2. To create a new file, use `sql-migrate new -env='{your_env}' [file-name-here]`, where `[file-name-here]` is the name of the migration file. The env can also be changed to the values on `dbconfig.yml`.
 
-3. To run the migration, use `sql-migrate up -env={your_env}`.
+3. To run the migration, use `sql-migrate up -env={your_env}` in the parent directory (`askara-palm-patrol`).
 
 4. To down a migration, simply use `sql-migrate down -env={your_env}`
 

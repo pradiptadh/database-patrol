@@ -1,31 +1,44 @@
 package models
 
 import (
-	"gorm.io/gorm"
+	"time"
 )
 
+type ActivityTypeGroup struct {
+	ID        int       `json:"id"`
+	Name      string    `json:"name"`
+	Slug      string    `json:"slug"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
 type ActivityType struct {
-	gorm.Model
-	ID uint8
-	Name string
-	TreatmentActivity []TreatmentActivity
+	ID                  int                `json:"id"`
+	ActivityTypeGroupID int                `json:"activity_type_group_id"`
+	ActivityTypeGroup   *ActivityTypeGroup `json:"activity_type_group" gorm:"foreignKey:ActivityTypeGroupID"`
+	Name                string             `json:"name"`
+	CreatedAt           time.Time          `json:"created_at"`
+	UpdatedAt           time.Time          `json:"updated_at"`
 }
 
-type TreatmentActivity struct {
-	gorm.Model
-	ID uint16
-	Name string
-	Description string
-	LaborPerHaPerDay uint8
-	ActivityTypeID uint8
-	DaysRepetition uint16
+type Activity struct {
+	ID             int           `json:"id"`
+	ActivityTypeID int           `json:"activity_type_id"`
+	ActivityType   *ActivityType `json:"activity_type,omitempty" gorm:"foreignKey:ActivityTypeID"`
+	RepeatTypeID   int           `json:"repeat_type_id"`
+	RepeatType     *RepeatType   `json:"repeat_type,omitempty" gorm:"foreignKey:RepeatTypeID"`
+	Interval       int           `json:"interval"`
+	FarmerCount    int           `json:"farmer_count"`
+	Name           string        `json:"name"`
+	CreatedAt      time.Time     `json:"created_at"`
+	UpdatedAt      time.Time     `json:"updated_at"`
 }
 
-// type HarvestActivity struct {
-// 	ID uint16
-// 	Name string
-// 	Description string
-// 	TreePerLaborPerDay uint8
-// 	ActivityTypeID uint8
-// 	DaysRepetition uint16
-// }
+//For determining activity recurrence
+type RepeatType struct {
+	ID        int       `json:"id"`
+	Name      string    `json:"name"`
+	Slug      string    `json:"slug"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+}
