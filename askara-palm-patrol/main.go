@@ -20,17 +20,19 @@ func main() {
 	host := os.Getenv("DB_HOST")
 	port := os.Getenv("DB_PORT")
 	models.Connect(&username, &password, &host, &port)
-	models.DB.AutoMigrate(
-		&models.Province{},
-		&models.Regency{},
-		&models.District{},
-		&models.Company{},
-		&models.PalmLand{},
-		&models.PalmBlock{},
-		&models.PalmTree{},
-		&models.ActivityType{},
-		&models.TreatmentActivity{},
-		&models.LaborType{},
-		&models.Labor{},
-	)
+
+	// Commented, divert to sql-migrate migrations
+	// models.DB.AutoMigrate(
+	// 	&models.Province{},
+	// 	&models.Regency{},
+	// 	&models.District{},
+	// 	&models.Company{},
+	// 	&models.PalmLand{},
+	// 	&models.PalmBlock{},
+	// 	&models.PalmTree{},
+	// 	&models.ActivityType{},
+	// 	&models.TreatmentActivity{},
+	// 	&models.LaborType{},
+	// 	&models.Labor{},
+	// )
 }
