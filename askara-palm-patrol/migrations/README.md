@@ -8,7 +8,7 @@ Database Migrations for Askara Palm Patrol.
 
 ## Usage
 
-1. Create the `dbconfig.yml` first. You can make one if you read the docs
+1. Create the `dbconfig.yml` first. You can make one if you read the docs. Put it in the parent of migrations directory (`askara-palm-patrol`)
    
 2. To create a new file, use `sql-migrate new -env='{your_env}' [file-name-here]`, where `[file-name-here]` is the name of the migration file. The env can also be changed to the values on `dbconfig.yml`.
 
