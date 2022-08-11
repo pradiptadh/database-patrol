@@ -13,12 +13,12 @@ type ActivityTypeGroup struct {
 }
 
 type ActivityType struct {
-	ID                   int                `json:"id"`
-	ActivityTypeGroupsID int                `json:"activity_type_groups_id"`
-	ActivityTypeGroup    *ActivityTypeGroup `json:"activity_type_group" gorm:"foreignKey:ActivityTypeGroupID"`
-	Name                 string             `json:"name"`
-	CreatedAt            time.Time          `json:"created_at"`
-	UpdatedAt            time.Time          `json:"updated_at"`
+	ID                  int                `json:"id"`
+	ActivityTypeGroupID int                `json:"activity_type_group_id"`
+	ActivityTypeGroup   *ActivityTypeGroup `json:"activity_type_group" gorm:"foreignKey:ActivityTypeGroupID"`
+	Name                string             `json:"name"`
+	CreatedAt           time.Time          `json:"created_at"`
+	UpdatedAt           time.Time          `json:"updated_at"`
 }
 
 type Activity struct {
