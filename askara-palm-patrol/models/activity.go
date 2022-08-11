@@ -14,7 +14,7 @@ type ActivityTypeGroup struct {
 
 type ActivityType struct {
 	ID                  int                `json:"id"`
-	ActivityTypeGroupID int                `json:"activity_type_group_id"`
+	ActivityTypeGroupID int                `json:"activity_type_groups_id"`
 	ActivityTypeGroup   *ActivityTypeGroup `json:"activity_type_group" gorm:"foreignKey:ActivityTypeGroupID"`
 	Name                string             `json:"name"`
 	CreatedAt           time.Time          `json:"created_at"`
