@@ -12,6 +12,7 @@ type Labor struct {
 	BirthProvince string    `json:"birth_province"`
 	HomeProvince  string    `json:"home_province"`
 	IsActive      bool      `json:"is_active"`
+	CompanyID     int       `json:"company_id"`
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`
 }
@@ -26,6 +27,7 @@ type Warden struct {
 	BirthProvince string    `json:"birth_province"`
 	HomeProvince  string    `json:"home_province"`
 	IsActive      bool      `json:"is_active"`
+	CompanyID     int       `json:"company_id"`
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`
 }
