@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
+	"github.com/Askara-Daulat-Desa/database-patrol/askara-palm-patrol/models"
 	"github.com/joho/godotenv"
-	"github.com/pradiptadh/database-patrol/askara-palm-patrol/models"
 )
 
 // Uncomment if you want to execute it locally

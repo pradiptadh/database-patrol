@@ -1,4 +1,4 @@
-module github.com/pradiptadh/database-patrol/askara-palm-patrol
+module github.com/Askara-Daulat-Desa/database-patrol/askara-palm-patrol
 
 go 1.18
 
