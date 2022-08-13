@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`regencies` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`disctricts` (
+CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`districts` (
   `id` INT NOT NULL,
   `regency_id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
@@ -38,10 +38,9 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`disctricts` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`lands` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `disctrict_id` INT NOT NULL,
+  `district_id` INT NOT NULL,
   `area_size` FLOAT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `address` TEXT NOT NULL,
@@ -50,10 +49,10 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`lands` (
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  INDEX `fk_lands_disctricts1_idx` (`disctrict_id` ASC),
+  INDEX `fk_lands_disctricts1_idx` (`district_id` ASC),
   CONSTRAINT `fk_lands_disctricts1`
-    FOREIGN KEY (`disctrict_id`)
-    REFERENCES `askara_palm_patrol`.`disctricts` (`id`)
+    FOREIGN KEY (`district_id`)
+    REFERENCES `askara_palm_patrol`.`districts` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -193,14 +192,14 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`warden_activity_types` (
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX `fk_labor_activity_types_activity_types1_idx` (`activity_type_id` ASC),
   PRIMARY KEY (`id`),
-  INDEX `fk_warden_activity_types_wardens1_idx` (`wardens_id` ASC),
+  INDEX `fk_warden_activity_types_wardens1_idx` (`warden_id` ASC),
   CONSTRAINT `fk_labor_activity_types_activity_types10`
     FOREIGN KEY (`activity_type_id`)
     REFERENCES `askara_palm_patrol`.`activity_types` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_warden_activity_types_wardens1`
-    FOREIGN KEY (`wardens_id`)
+    FOREIGN KEY (`warden_id`)
     REFERENCES `askara_palm_patrol`.`wardens` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
