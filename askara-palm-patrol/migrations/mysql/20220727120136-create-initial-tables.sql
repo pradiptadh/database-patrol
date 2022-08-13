@@ -345,9 +345,24 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`warden_block_activites` (
 ENGINE = InnoDB;
 
 -- +migrate Down
-DROP TABLE `askara_palm_patrol`.`activities`;
-DROP TABLE `askara_palm_patrol`.`repeat_types`;
-DROP TABLE `askara_palm_patrol`.`activity_types`;
-DROP TABLE `askara_palm_patrol`.`activity_type_groups`;
-DROP TABLE `askara_palm_patrol`.`blocks`;
-DROP TABLE `askara_palm_patrol`.`lands`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`warden_block_activites`;
+DROP TABLE IF EXISTS  `askara_palm_patrol`.`labor_block_activites`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`block_activities`;
+DROP TABLE IF EXISTS  `askara_palm_patrol`.`labor_activity_types`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`labor_blocks`;
+DROP TABLE IF EXISTS  `askara_palm_patrol`.`warden_activity_types`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`warden_blocks`;
+DROP TABLE IF EXISTS  `askara_palm_patrol`.`labors`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`wardens`;
+DROP TABLE IF EXISTS  `askara_palm_patrol`.`activities`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`activity_statuses`;
+DROP TABLE IF EXISTS  `askara_palm_patrol`.`activities`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`repeat_types`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`activity_types`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`activity_type_groups`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`blocks`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`lands`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`districts`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`regencies`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`provinces`;
+
