@@ -1,7 +1,7 @@
 
 -- +migrate Up
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`provinces` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`provinces` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`regencies` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `province_id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`regencies` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`districts` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `regency_id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`activities` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`wardens` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
   `date_of_birth` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`wardens` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`labors` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
   `date_of_birth` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`warden_activity_types` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`warden_blocks` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `warden_id` INT UNSIGNED NOT NULL,
   `block_id` INT UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`warden_blocks` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`labor_blocks` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `labor_id` INT UNSIGNED NOT NULL,
   `block_id` INT UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
