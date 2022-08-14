@@ -14,7 +14,7 @@ type Land struct {
 
 	// Get district, province, and regency from preload
 	DistrictID int       `json:"district_id"`
-	District   *District `json:"district"`
+	District   *District `json:"district" gorm:"foreignKey:DistrictID"`
 
 	// Assign manually  from preload
 	ProvinceName string `json:"province_name" gorm:"-"`
