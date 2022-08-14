@@ -23,7 +23,7 @@ type Regency struct {
 type District struct {
 	ID        int       `json:"id"`
 	RegencyID int       `json:"regency_id"`
-	Regency   *Province `json:"regency,omitempty" gorm:"foreignKey:RegencyID"`
+	Regency   *Regency  `json:"regency,omitempty" gorm:"foreignKey:RegencyID"`
 	Name      string    `json:"name"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
