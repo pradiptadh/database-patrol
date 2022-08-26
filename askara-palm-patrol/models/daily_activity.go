@@ -54,7 +54,7 @@ type BlockActivityImage struct {
 	UpdatedAt       time.Time      `json:"updated_at"`
 }
 
-type LaborAttendant struct {
+type LaborAttendance struct {
 	ID                   int                 `json:"id"`
 	LaborBlockActivityID int                 `json:"labor_block_activity_id"`
 	LaborBlockActivity   *LaborBlockActivity `json:"labor_block_activity,omitempty" gorm:"foreignKey:LaborBlockActivityID"`
