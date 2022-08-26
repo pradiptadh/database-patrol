@@ -12,6 +12,9 @@ type BlockActivity struct {
 	ActivityStatus   *ActivityStatus `json:"activity_status,omitempty" gorm:"foreignKey:ActivityStatusID"`
 	WardenID         int             `json:"warden_id"`
 	Warden           *Warden         `json:"warden,omitempty" gorm:"foreignKey:WardenID"`
+	IsActive         bool            `json:"is_active"`
+	Desc             string          `json:"desc"`
+	ReadyHarvest     int             `json:"ready_harvest"`
 	Date             time.Time       `json:"date"`
 	CreatedAt        time.Time       `json:"created_at"`
 	UpdatedAt        time.Time       `json:"updated_at"`
