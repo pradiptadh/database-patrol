@@ -24,6 +24,9 @@ type LaborBlockActivity struct {
 	BlockActivityID int            `json:"block_activity_id"`
 	BlockActivity   *BlockActivity `json:"block_activity,omitempty" gorm:"foreignKey:BlockActivityID"`
 	WorkHour        int            `json:"work_hour"`
+	TotalHarvest    int            `json:"total_harvest"`
+	Note            string         `json:"note"`
+	HasFinished     bool           `json:"has_finished"`
 	CreatedAt       time.Time      `json:"created_at"`
 	UpdatedAt       time.Time      `json:"updated_at"`
 }
@@ -37,4 +40,23 @@ type WardenBlockActivity struct {
 	WorkHour        int            `json:"work_hour"`
 	CreatedAt       time.Time      `json:"created_at"`
 	UpdatedAt       time.Time      `json:"updated_at"`
+}
+
+type BlockActivityImage struct {
+	ID              int            `json:"id"`
+	BlockActivityID int            `json:"block_activity_id"`
+	BlockActivity   *BlockActivity `json:"block_activity,omitempty" gorm:"foreignKey:BlockActivityID"`
+	Media           string         `json:"media"`
+	CreatedAt       time.Time      `json:"created_at"`
+	UpdatedAt       time.Time      `json:"updated_at"`
+}
+
+type LaborAttendant struct {
+	ID                   int                 `json:"id"`
+	LaborBlockActivityID int                 `json:"labor_block_activity_id"`
+	LaborBlockActivity   *LaborBlockActivity `json:"labor_block_activity,omitempty" gorm:"foreignKey:LaborBlockActivityID"`
+	CheckIn              time.Time           `json:"check_in"`
+	CheckOut             time.Time           `json:"check_out"`
+	CreatedAt            time.Time           `json:"created_at"`
+	UpdatedAt            time.Time           `json:"updated_at"`
 }
