@@ -1,13 +1,13 @@
 
 -- +migrate Up
 alter table block_activities
-    add is_active tinyint null;
+    add is_active tinyint null after warden_id;
 
 alter table block_activities
-    add ready_harvest int null;
+    add ready_harvest int null after is_active;
 
 alter table block_activities
-    add `desc` text null;
+    add desc text null after ready_harvest;
 
 -- +migrate Down
 alter table block_activities
