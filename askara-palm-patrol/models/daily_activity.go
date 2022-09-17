@@ -15,6 +15,7 @@ type BlockActivity struct {
 	IsActive         bool            `json:"is_active"`
 	Desc             string          `json:"desc"`
 	ReadyHarvest     int             `json:"ready_harvest"`
+	TotalHarvest     int             `json:"total_harvest"`
 	Date             time.Time       `json:"date"`
 	CreatedAt        time.Time       `json:"created_at"`
 	UpdatedAt        time.Time       `json:"updated_at"`
@@ -62,4 +63,14 @@ type LaborAttendance struct {
 	CheckOut             time.Time           `json:"check_out"`
 	CreatedAt            time.Time           `json:"created_at"`
 	UpdatedAt            time.Time           `json:"updated_at"`
+}
+
+type WardenAttendance struct {
+	ID                    int                  `json:"id"`
+	WardenBlockActivityID int                  `json:"warden_block_activity_id"`
+	WardenBlockActivity   *WardenBlockActivity `json:"warden_block_activity,omitempty" gorm:"foreignKey:WardenBlockActivity"`
+	CheckIn               time.Time            `json:"check_in"`
+	CheckOut              time.Time            `json:"check_out"`
+	CreatedAt             time.Time            `json:"created_at"`
+	UpdatedAt             time.Time            `json:"updated_at"`
 }

@@ -15,6 +15,9 @@ type Labor struct {
 	CompanyID     int       `json:"company_id"`
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`
+
+	// Mobile needs this; for easier populating
+	HasFinished bool `json:"has_finished" gorm:"-"`
 }
 
 type Warden struct {
