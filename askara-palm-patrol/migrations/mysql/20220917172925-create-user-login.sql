@@ -30,3 +30,5 @@ CREATE TABLE IF NOT EXISTS `askara_palm_patrol`.`users` (
 ENGINE = InnoDB;
 
 -- +migrate Down
+DROP TABLE IF EXISTS `askara_palm_patrol`.`users`;
+DROP TABLE IF EXISTS `askara_palm_patrol`.`roles`;
