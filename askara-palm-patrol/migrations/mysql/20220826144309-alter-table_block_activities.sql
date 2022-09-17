@@ -7,7 +7,7 @@ alter table block_activities
     add ready_harvest int null after is_active;
 
 alter table block_activities
-    add desc text null after ready_harvest;
+    add `desc` text null after ready_harvest;
 
 -- +migrate Down
 alter table block_activities
